@@ -1,19 +1,19 @@
 $ErrorActionPreference = "Stop"
 
-Write-Host "--- :package: Build job checkout directory"
+Write-Output "Build job checkout directory"
 
-Get-Location
-Get-ChildItem
+$mypath = $MyInvocation.MyCommand.Path
+Write-Output "Path of the script : $mypath"
+$myfiles = Get-ChildItem
+Write-Output "Files in directory : $myfiles"
+
+$myenv = Get-Variable
+Write-Output "Build job environment: `n  $myenv"
 
 
-Write-Host "--- :evergreen_tree: Build job environment"
+Write-Output "+++ :hammer: Example tests"
 
-Get-Variable
-
-
-Write-Host "+++ :hammer: Example tests"
-
-Write-Host "\033[33mCongratulations!\033[0m You've successfully run your first build on Buildkite! 👍
+Write-Output "\033[33mCongratulations!\033[0m You've successfully run your first build on Buildkite! 👍
 
 \033[33m$(Get-Content -Path artifacts/thumbsup.txt)\033[0m
 
@@ -23,7 +23,7 @@ If you have any questions or need help email support@buildkite.com, we'd be happ
 "
 
 
-Write-Host "+++ :frame_with_picture: Inline image uploaded as a build artifact"
+Write-Output "+++ :frame_with_picture: Inline image uploaded as a build artifact"
 
 function inline_image($1, $2) {
   printf '\033]1338;url='"$1"';alt='"$2"'\a\n'
