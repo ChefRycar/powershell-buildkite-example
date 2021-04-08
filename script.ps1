@@ -13,20 +13,13 @@ Write-Output "Build job environment: `n  $myenv"
 
 Write-Output "Example tests"
 
-Write-Output "\033[33mCongratulations!\033[0m You've successfully run your first build on Buildkite! 👍
-
-\033[33m$(Get-Content -Path artifacts/thumbsup.txt)\033[0m
-
-If you have any questions or need help email support@buildkite.com, we'd be happy to help!
-
-\033[31m<3\033[0m Buildkite
-"
+Write-Output "Congratulations! You've successfully run your first build on Buildkite! If you have any questions or need help email support@buildkite.com, we'd be happy to help!"
 
 
-Write-Output "+++ :frame_with_picture: Inline image uploaded as a build artifact"
+Write-Output "Inline image uploaded as a build artifact"
 
-function inline_image($1, $2) {
-  printf '\033]1338;url='"$1"';alt='"$2"'\a\n'
+function do_a_thing($1, $2) {
+  Write-Output "$1 $2"
 }
 
-inline_image 'artifact://artifacts/image.gif' 'Rainbows'
+do_a_thing 'Hello' 'World'
