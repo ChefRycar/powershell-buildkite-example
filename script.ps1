@@ -11,7 +11,14 @@ $myenv = Get-Variable
 Write-Output "Build job environment: `n  $myenv"
 
 
-Write-Output "Example tests"
+Write-Output "+++ :hammer: Example tests"
+
+Write-Output "$([char]27)[33mCongratulations!$([char]27)[0m You've successfully run your first build on Buildkite! 👍
+$([char]27)[33m$(cat artifacts/thumbsup.txt)$([char]27)[0m
+If you have any questions or need help email support@buildkite.com, we'd be happy to help!
+$([char]27)[31m<3$([char]27)[0m Buildkite
+"
+
 
 Write-Output "Congratulations! You've successfully run your first build on Buildkite! If you have any questions or need help email support@buildkite.com, we'd be happy to help!"
 
