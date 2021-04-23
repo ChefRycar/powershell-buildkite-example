@@ -14,7 +14,7 @@ Write-Output "Build job environment: `n  $myenv"
 Write-Output "+++ :hammer: Example tests"
 
 Write-Host "$([char]27)[33mCongratulations!$([char]27)[0m You've successfully run your first build on Buildkite! :thumbsup:
-$([char]27)[33m$(cat artifacts/thumbsup.txt)$([char]27)[0m
+$([char]27)[33m $(cat artifacts/thumbsup.txt -raw) $([char]27)[0m
 If you have any questions or need help email support@buildkite.com, we'd be happy to help!
 $([char]27)[31m<3$([char]27)[0m Buildkite
 "
@@ -27,7 +27,7 @@ Write-Output "Inline image uploaded as a build artifact"
 Write-Output "+++ :frame_with_picture: Inline image uploaded as a build artifact"
 
 function inline_image($1, $2) {
-  Write-Host "$([char]27)]1338;url='"$1"';alt='"$2"'`a`n"
+  Write-Host "$([char]27)]1338;url='$1';alt='$2'`a`n"
 }
 
 function do_a_thing($1, $2) {
