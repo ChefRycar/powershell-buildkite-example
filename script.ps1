@@ -20,7 +20,7 @@ Write-Output "Inline image uploaded as a build artifact"
 Write-Output "+++ :frame_with_picture: Inline image uploaded as a build artifact"
 
 function inline_image($1, $2) {
-  Write-Output '\033]1338;url='"$1"';alt='"$2"'\a\n'
+  '\033]1338;url='"$1"';alt='"$2"'\a\n' -f
 }
 
 function do_a_thing($1, $2) {
