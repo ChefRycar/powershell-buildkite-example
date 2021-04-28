@@ -34,6 +34,6 @@ function do_a_thing($1, $2) {
   Write-Output "$1 $2"
 }
 
-inline_image 'artifact://artifacts\image.gif' 'Rainbows'
+inline_image 'artifact://artifacts\\image.gif' 'Rainbows'
 
 do_a_thing 'Hello' 'World'
